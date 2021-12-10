@@ -1,18 +1,14 @@
-import { connect } from 'react-redux'
-import Counter from '../component/couter'
-import { increment, decrement, reset } from '../actions';
-
-const mapStateToProps = (state) => {
-    return {
-        couter: state
-    };
+//quy định các phương thức để chọc tới reducer
+export function increment() {
+   return {
+      type: 'INCREMENT'
+   }
 }
-
-const mapDisPatchToProps = (dispatch) => {
-    return {
-        increment: () => dispatch(increment()),
-        decrement: () => dispatch(decrement()),
-        reset: () => dispatch(reset())
-    }
+export function decrement() {
+   return {
+      type: 'DECREMENT'
+   }
 }
-export default connect(mapStateToProps, mapDisPatchToProps)(Counter);
+export function reset() {
+   return { type: 'RESET' }
+}
